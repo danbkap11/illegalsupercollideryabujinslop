@@ -1,0 +1,2384 @@
+{
+  "passed": true,
+  "method": "Stock SuperCollider NRT, real stereo PCM output measured; SHA256 and signal-difference RMS > 0.0001 establish signal changes, not musical quality or subjective audibility.",
+  "slider_comparison_patch": "All switches on; other sliders fixed at 0.5.",
+  "switch_comparison_patch": "All other switches off; all sliders fixed at 0.5.",
+  "seed_repeat_byte_identical": true,
+  "optional_samples_absent_passed": true,
+  "control_pairs": [
+    {
+      "kind": "slider",
+      "index": 0,
+      "seed": 302,
+      "seconds": 16,
+      "before": "slider-00-low",
+      "after": "slider-00-high",
+      "audio_bytes_differ": true,
+      "difference_rms": 0.03702516715971037,
+      "difference_peak": 0.4024658203125,
+      "changed_sample_fraction": 0.9787310356200528,
+      "passed": true
+    },
+    {
+      "kind": "slider",
+      "index": 1,
+      "seed": 302,
+      "seconds": 16,
+      "before": "slider-01-low",
+      "after": "slider-01-high",
+      "audio_bytes_differ": true,
+      "difference_rms": 0.03306588167916,
+      "difference_peak": 0.446380615234375,
+      "changed_sample_fraction": 0.9710993450810403,
+      "passed": true
+    },
+    {
+      "kind": "slider",
+      "index": 2,
+      "seed": 302,
+      "seconds": 16,
+      "before": "slider-02-low",
+      "after": "slider-02-high",
+      "audio_bytes_differ": true,
+      "difference_rms": 0.04182850963059589,
+      "difference_peak": 0.3765869140625,
+      "changed_sample_fraction": 0.9859899170750094,
+      "passed": true
+    },
+    {
+      "kind": "slider",
+      "index": 3,
+      "seed": 302,
+      "seconds": 16,
+      "before": "slider-03-low",
+      "after": "slider-03-high",
+      "audio_bytes_differ": true,
+      "difference_rms": 0.0441838685332758,
+      "difference_peak": 0.418121337890625,
+      "changed_sample_fraction": 0.9799189596683,
+      "passed": true
+    },
+    {
+      "kind": "slider",
+      "index": 4,
+      "seed": 302,
+      "seconds": 16,
+      "before": "slider-04-low",
+      "after": "slider-04-high",
+      "audio_bytes_differ": true,
+      "difference_rms": 0.024371359898470748,
+      "difference_peak": 0.2333984375,
+      "changed_sample_fraction": 0.9911144223520543,
+      "passed": true
+    },
+    {
+      "kind": "slider",
+      "index": 5,
+      "seed": 302,
+      "seconds": 16,
+      "before": "slider-05-low",
+      "after": "slider-05-high",
+      "audio_bytes_differ": true,
+      "difference_rms": 0.022314871920147226,
+      "difference_peak": 0.69281005859375,
+      "changed_sample_fraction": 0.9261885130041463,
+      "passed": true
+    },
+    {
+      "kind": "slider",
+      "index": 6,
+      "seed": 302,
+      "seconds": 16,
+      "before": "slider-06-low",
+      "after": "slider-06-high",
+      "audio_bytes_differ": true,
+      "difference_rms": 0.039615168992132216,
+      "difference_peak": 0.458038330078125,
+      "changed_sample_fraction": 0.9808012156049755,
+      "passed": true
+    },
+    {
+      "kind": "slider",
+      "index": 7,
+      "seed": 302,
+      "seconds": 16,
+      "before": "slider-07-low",
+      "after": "slider-07-high",
+      "audio_bytes_differ": true,
+      "difference_rms": 0.043730604696334836,
+      "difference_peak": 0.462127685546875,
+      "changed_sample_fraction": 0.9802375848096494,
+      "passed": true
+    },
+    {
+      "kind": "slider",
+      "index": 8,
+      "seed": 302,
+      "seconds": 16,
+      "before": "slider-08-low",
+      "after": "slider-08-high",
+      "audio_bytes_differ": true,
+      "difference_rms": 0.038279232484848234,
+      "difference_peak": 0.412750244140625,
+      "changed_sample_fraction": 0.9660408028646815,
+      "passed": true
+    },
+    {
+      "kind": "slider",
+      "index": 9,
+      "seed": 302,
+      "seconds": 16,
+      "before": "slider-09-low",
+      "after": "slider-09-high",
+      "audio_bytes_differ": true,
+      "difference_rms": 0.041143724689720114,
+      "difference_peak": 0.3720703125,
+      "changed_sample_fraction": 0.9809731907274784,
+      "passed": true
+    },
+    {
+      "kind": "switch",
+      "index": 0,
+      "seed": 302,
+      "seconds": 16,
+      "before": "switch-baseline",
+      "after": "switch-00-on",
+      "audio_bytes_differ": true,
+      "difference_rms": 0.08724364820668136,
+      "difference_peak": 1.228485107421875,
+      "changed_sample_fraction": 0.9816970175273275,
+      "passed": true
+    },
+    {
+      "kind": "switch",
+      "index": 1,
+      "seed": 302,
+      "seconds": 16,
+      "before": "switch-baseline",
+      "after": "switch-01-on",
+      "audio_bytes_differ": true,
+      "difference_rms": 0.049128093799069066,
+      "difference_peak": 0.67034912109375,
+      "changed_sample_fraction": 0.9747903316999623,
+      "passed": true
+    },
+    {
+      "kind": "switch",
+      "index": 2,
+      "seed": 302,
+      "seconds": 16,
+      "before": "switch-baseline",
+      "after": "switch-02-on",
+      "audio_bytes_differ": true,
+      "difference_rms": 0.024262920367564406,
+      "difference_peak": 0.56976318359375,
+      "changed_sample_fraction": 0.9347955145118734,
+      "passed": true
+    },
+    {
+      "kind": "switch",
+      "index": 3,
+      "seed": 302,
+      "seconds": 16,
+      "before": "switch-baseline",
+      "after": "switch-03-on",
+      "audio_bytes_differ": true,
+      "difference_rms": 0.04834798351683483,
+      "difference_peak": 0.821502685546875,
+      "changed_sample_fraction": 0.9754529070863174,
+      "passed": true
+    },
+    {
+      "kind": "switch",
+      "index": 4,
+      "seed": 302,
+      "seconds": 16,
+      "before": "switch-baseline",
+      "after": "switch-04-on",
+      "audio_bytes_differ": true,
+      "difference_rms": 0.055487054385408546,
+      "difference_peak": 0.765472412109375,
+      "changed_sample_fraction": 0.7928000141349416,
+      "passed": true
+    },
+    {
+      "kind": "switch",
+      "index": 5,
+      "seed": 302,
+      "seconds": 16,
+      "before": "switch-baseline",
+      "after": "switch-05-on",
+      "audio_bytes_differ": true,
+      "difference_rms": 0.03251212906786639,
+      "difference_peak": 0.668212890625,
+      "changed_sample_fraction": 0.9506237042970223,
+      "passed": true
+    },
+    {
+      "kind": "switch",
+      "index": 6,
+      "seed": 302,
+      "seconds": 16,
+      "before": "switch-baseline",
+      "after": "switch-06-on",
+      "audio_bytes_differ": true,
+      "difference_rms": 0.04817434186825915,
+      "difference_peak": 0.7489013671875,
+      "changed_sample_fraction": 0.9755076799849227,
+      "passed": true
+    },
+    {
+      "kind": "switch",
+      "index": 7,
+      "seed": 302,
+      "seconds": 16,
+      "before": "switch-baseline",
+      "after": "switch-07-on",
+      "audio_bytes_differ": true,
+      "difference_rms": 0.045957399689010296,
+      "difference_peak": 0.815582275390625,
+      "changed_sample_fraction": 0.9758451517150396,
+      "passed": true
+    },
+    {
+      "kind": "switch",
+      "index": 8,
+      "seed": 302,
+      "seconds": 16,
+      "before": "switch-baseline",
+      "after": "switch-08-on",
+      "audio_bytes_differ": true,
+      "difference_rms": 0.05847197091522474,
+      "difference_peak": 0.710723876953125,
+      "changed_sample_fraction": 0.9749175461741425,
+      "passed": true
+    },
+    {
+      "kind": "switch",
+      "index": 9,
+      "seed": 302,
+      "seconds": 16,
+      "before": "switch-baseline",
+      "after": "switch-09-on",
+      "audio_bytes_differ": true,
+      "difference_rms": 0.06032008722733279,
+      "difference_peak": 0.74847412109375,
+      "changed_sample_fraction": 0.9768717018469657,
+      "passed": true
+    }
+  ],
+  "renders": [
+    {
+      "name": "switch-baseline",
+      "sliders": [
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "switches": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "seed": 302,
+      "no_samples": false,
+      "seconds": 16,
+      "exit_code": 0,
+      "audio": {
+        "file": "switch-baseline.wav",
+        "channels": 2,
+        "sample_rate": 44100,
+        "encoding": "pcm",
+        "bits": 16,
+        "frames": 848960,
+        "duration_seconds": 19.25079365079365,
+        "peak": [
+          0.666839599609375,
+          0.652008056640625
+        ],
+        "rms": [
+          0.04583916241102462,
+          0.04422298792872428
+        ],
+        "dc": [
+          -1.5137072468630737e-05,
+          -1.5132255568578024e-05
+        ],
+        "non_silent_fraction": [
+          0.9737514134941575,
+          0.9746230682246514
+        ],
+        "clipped_samples": [
+          0,
+          0
+        ],
+        "nonfinite_samples": 0
+      },
+      "sha256": "3845124e2521b9c61f79de1910446a9f17bec3e95b43de798267aadf48e6698f",
+      "failures": [],
+      "passed": true
+    },
+    {
+      "name": "slider-00-low",
+      "sliders": [
+        0,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "switches": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "seed": 302,
+      "no_samples": false,
+      "seconds": 16,
+      "exit_code": 0,
+      "audio": {
+        "file": "slider-00-low.wav",
+        "channels": 2,
+        "sample_rate": 44100,
+        "encoding": "pcm",
+        "bits": 16,
+        "frames": 848960,
+        "duration_seconds": 19.25079365079365,
+        "peak": [
+          0.3262939453125,
+          0.276824951171875
+        ],
+        "rms": [
+          0.026653670942181518,
+          0.023396313345277704
+        ],
+        "dc": [
+          -1.5159683141266225e-05,
+          -1.5160222346496006e-05
+        ],
+        "non_silent_fraction": [
+          0.9764370523935167,
+          0.9774453448925744
+        ],
+        "clipped_samples": [
+          0,
+          0
+        ],
+        "nonfinite_samples": 0
+      },
+      "sha256": "170f600bd7e6dcfc28b94e1ceaf2e2da4c61826c936f25104c1e971c4bd901f0",
+      "failures": [],
+      "passed": true
+    },
+    {
+      "name": "slider-00-high",
+      "sliders": [
+        1,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "switches": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "seed": 302,
+      "no_samples": false,
+      "seconds": 16,
+      "exit_code": 0,
+      "audio": {
+        "file": "slider-00-high.wav",
+        "channels": 2,
+        "sample_rate": 44100,
+        "encoding": "pcm",
+        "bits": 16,
+        "frames": 848960,
+        "duration_seconds": 19.25079365079365,
+        "peak": [
+          0.270050048828125,
+          0.25836181640625
+        ],
+        "rms": [
+          0.029319680175578827,
+          0.02587970504624808
+        ],
+        "dc": [
+          -1.5147317367996579e-05,
+          -1.514782062621104e-05
+        ],
+        "non_silent_fraction": [
+          0.9707642291745194,
+          0.9714003015454202
+        ],
+        "clipped_samples": [
+          0,
+          0
+        ],
+        "nonfinite_samples": 0
+      },
+      "sha256": "c88f32c6acb5096d77c982b24f65f459920db2ec813672d55c8b96ae5f1f3905",
+      "failures": [],
+      "passed": true
+    },
+    {
+      "name": "slider-01-low",
+      "sliders": [
+        0.5,
+        0,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "switches": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "seed": 302,
+      "no_samples": false,
+      "seconds": 16,
+      "exit_code": 0,
+      "audio": {
+        "file": "slider-01-low.wav",
+        "channels": 2,
+        "sample_rate": 44100,
+        "encoding": "pcm",
+        "bits": 16,
+        "frames": 848960,
+        "duration_seconds": 19.25079365079365,
+        "peak": [
+          0.29559326171875,
+          0.30291748046875
+        ],
+        "rms": [
+          0.02495676740154878,
+          0.026772061550825385
+        ],
+        "dc": [
+          -1.5140810958223885e-05,
+          -1.5142931832127692e-05
+        ],
+        "non_silent_fraction": [
+          0.9697594704108556,
+          0.9713967678100264
+        ],
+        "clipped_samples": [
+          0,
+          0
+        ],
+        "nonfinite_samples": 0
+      },
+      "sha256": "f5d2ff7895aa51b23b23c30ecea7705c30b3be30b92ff542849168f906e92a64",
+      "failures": [],
+      "passed": true
+    },
+    {
+      "name": "slider-01-high",
+      "sliders": [
+        0.5,
+        1,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "switches": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "seed": 302,
+      "no_samples": false,
+      "seconds": 16,
+      "exit_code": 0,
+      "audio": {
+        "file": "slider-01-high.wav",
+        "channels": 2,
+        "sample_rate": 44100,
+        "encoding": "pcm",
+        "bits": 16,
+        "frames": 848960,
+        "duration_seconds": 19.25079365079365,
+        "peak": [
+          0.398773193359375,
+          0.559600830078125
+        ],
+        "rms": [
+          0.031017608219913357,
+          0.03299854743383948
+        ],
+        "dc": [
+          -1.5144010242587255e-05,
+          -1.5138330614166892e-05
+        ],
+        "non_silent_fraction": [
+          0.9726253298153035,
+          0.9735523464003015
+        ],
+        "clipped_samples": [
+          0,
+          0
+        ],
+        "nonfinite_samples": 0
+      },
+      "sha256": "5d1e14cff67f8fb918dd2e8b79ed721cb133344044d72f9dd87d6a60c1eb8242",
+      "failures": [],
+      "passed": true
+    },
+    {
+      "name": "slider-02-low",
+      "sliders": [
+        0.5,
+        0.5,
+        0,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "switches": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "seed": 302,
+      "no_samples": false,
+      "seconds": 16,
+      "exit_code": 0,
+      "audio": {
+        "file": "slider-02-low.wav",
+        "channels": 2,
+        "sample_rate": 44100,
+        "encoding": "pcm",
+        "bits": 16,
+        "frames": 848960,
+        "duration_seconds": 19.25079365079365,
+        "peak": [
+          0.27294921875,
+          0.281768798828125
+        ],
+        "rms": [
+          0.029645469140667655,
+          0.028730369986825
+        ],
+        "dc": [
+          -1.5123772072962802e-05,
+          -1.5153068890447577e-05
+        ],
+        "non_silent_fraction": [
+          0.9851877591405955,
+          0.9854209856765925
+        ],
+        "clipped_samples": [
+          0,
+          0
+        ],
+        "nonfinite_samples": 0
+      },
+      "sha256": "8fe6b9362fbe18522355e7029fef1cb59b60c5a8a2637b75eb788cb82467e90d",
+      "failures": [],
+      "passed": true
+    },
+    {
+      "name": "slider-02-high",
+      "sliders": [
+        0.5,
+        0.5,
+        1,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "switches": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "seed": 302,
+      "no_samples": false,
+      "seconds": 16,
+      "exit_code": 0,
+      "audio": {
+        "file": "slider-02-high.wav",
+        "channels": 2,
+        "sample_rate": 44100,
+        "encoding": "pcm",
+        "bits": 16,
+        "frames": 848960,
+        "duration_seconds": 19.25079365079365,
+        "peak": [
+          0.3448486328125,
+          0.348114013671875
+        ],
+        "rms": [
+          0.03046171230240295,
+          0.030298539000411056
+        ],
+        "dc": [
+          -1.5143974295571935e-05,
+          -1.5145052706031498e-05
+        ],
+        "non_silent_fraction": [
+          0.9585740199773841,
+          0.960569402563136
+        ],
+        "clipped_samples": [
+          0,
+          0
+        ],
+        "nonfinite_samples": 0
+      },
+      "sha256": "3a411f63a1f9c79d95021d13be30d2c3e00abd97d6d04cef33494675ac3d0675",
+      "failures": [],
+      "passed": true
+    },
+    {
+      "name": "slider-03-low",
+      "sliders": [
+        0.5,
+        0.5,
+        0.5,
+        0,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "switches": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "seed": 302,
+      "no_samples": false,
+      "seconds": 16,
+      "exit_code": 0,
+      "audio": {
+        "file": "slider-03-low.wav",
+        "channels": 2,
+        "sample_rate": 44100,
+        "encoding": "pcm",
+        "bits": 16,
+        "frames": 848960,
+        "duration_seconds": 19.25079365079365,
+        "peak": [
+          0.32513427734375,
+          0.30926513671875
+        ],
+        "rms": [
+          0.019126349284102947,
+          0.021649124929567925
+        ],
+        "dc": [
+          -1.515353620164672e-05,
+          -1.51609772338177e-05
+        ],
+        "non_silent_fraction": [
+          0.9644517998492272,
+          0.9630194591029023
+        ],
+        "clipped_samples": [
+          0,
+          0
+        ],
+        "nonfinite_samples": 0
+      },
+      "sha256": "bf670a240d383d52ad61bd1e39218c7c5ed033529ed0f474e0dd8bd9b1aba34e",
+      "failures": [],
+      "passed": true
+    },
+    {
+      "name": "slider-03-high",
+      "sliders": [
+        0.5,
+        0.5,
+        0.5,
+        1,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "switches": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "seed": 302,
+      "no_samples": false,
+      "seconds": 16,
+      "exit_code": 0,
+      "audio": {
+        "file": "slider-03-high.wav",
+        "channels": 2,
+        "sample_rate": 44100,
+        "encoding": "pcm",
+        "bits": 16,
+        "frames": 848960,
+        "duration_seconds": 19.25079365079365,
+        "peak": [
+          0.34478759765625,
+          0.356353759765625
+        ],
+        "rms": [
+          0.04082779532689819,
+          0.0406578433545997
+        ],
+        "dc": [
+          -1.5169460729432924e-05,
+          -1.5140487435086017e-05
+        ],
+        "non_silent_fraction": [
+          0.9819649924613645,
+          0.9779365341123256
+        ],
+        "clipped_samples": [
+          0,
+          0
+        ],
+        "nonfinite_samples": 0
+      },
+      "sha256": "58184dc6287d80d714ba0fa48dafc21919912a6099720bb8af3103cba80fedf1",
+      "failures": [],
+      "passed": true
+    },
+    {
+      "name": "slider-04-low",
+      "sliders": [
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "switches": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "seed": 302,
+      "no_samples": false,
+      "seconds": 16,
+      "exit_code": 0,
+      "audio": {
+        "file": "slider-04-low.wav",
+        "channels": 2,
+        "sample_rate": 44100,
+        "encoding": "pcm",
+        "bits": 16,
+        "frames": 848960,
+        "duration_seconds": 19.25079365079365,
+        "peak": [
+          0.43011474609375,
+          0.43243408203125
+        ],
+        "rms": [
+          0.027648617448073735,
+          0.028866163026053344
+        ],
+        "dc": [
+          -1.5139049554473267e-05,
+          -1.513843845521285e-05
+        ],
+        "non_silent_fraction": [
+          0.9619381360723709,
+          0.9629676309837919
+        ],
+        "clipped_samples": [
+          0,
+          0
+        ],
+        "nonfinite_samples": 0
+      },
+      "sha256": "4cc077b43cdce1471da6865e6f076c0675b5a935e51890653fad5323a8957ab2",
+      "failures": [],
+      "passed": true
+    },
+    {
+      "name": "slider-04-high",
+      "sliders": [
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        1,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "switches": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "seed": 302,
+      "no_samples": false,
+      "seconds": 16,
+      "exit_code": 0,
+      "audio": {
+        "file": "slider-04-high.wav",
+        "channels": 2,
+        "sample_rate": 44100,
+        "encoding": "pcm",
+        "bits": 16,
+        "frames": 848960,
+        "duration_seconds": 19.25079365079365,
+        "peak": [
+          0.3773193359375,
+          0.419952392578125
+        ],
+        "rms": [
+          0.034115931882032186,
+          0.03649302432068408
+        ],
+        "dc": [
+          -1.5148683354578691e-05,
+          -1.5136497316385637e-05
+        ],
+        "non_silent_fraction": [
+          0.9914118450810403,
+          0.9910690727478326
+        ],
+        "clipped_samples": [
+          0,
+          0
+        ],
+        "nonfinite_samples": 0
+      },
+      "sha256": "0e1317825c93d98f14ea91d249daa071f8d5a674a39f972125c15ce606851a31",
+      "failures": [],
+      "passed": true
+    },
+    {
+      "name": "slider-05-low",
+      "sliders": [
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0,
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "switches": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "seed": 302,
+      "no_samples": false,
+      "seconds": 16,
+      "exit_code": 0,
+      "audio": {
+        "file": "slider-05-low.wav",
+        "channels": 2,
+        "sample_rate": 44100,
+        "encoding": "pcm",
+        "bits": 16,
+        "frames": 848960,
+        "duration_seconds": 19.25079365079365,
+        "peak": [
+          0.25164794921875,
+          0.261566162109375
+        ],
+        "rms": [
+          0.02632844477016659,
+          0.02837801004468907
+        ],
+        "dc": [
+          -1.5165758186855094e-05,
+          -1.5144801076924267e-05
+        ],
+        "non_silent_fraction": [
+          0.9714179702223897,
+          0.9726123727855258
+        ],
+        "clipped_samples": [
+          0,
+          0
+        ],
+        "nonfinite_samples": 0
+      },
+      "sha256": "e75d7d55da2c785067262873eacdea6098a519c799d22e705a137c019781dce9",
+      "failures": [],
+      "passed": true
+    },
+    {
+      "name": "slider-05-high",
+      "sliders": [
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        1,
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "switches": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "seed": 302,
+      "no_samples": false,
+      "seconds": 16,
+      "exit_code": 0,
+      "audio": {
+        "file": "slider-05-high.wav",
+        "channels": 2,
+        "sample_rate": 44100,
+        "encoding": "pcm",
+        "bits": 16,
+        "frames": 848960,
+        "duration_seconds": 19.25079365079365,
+        "peak": [
+          0.6541748046875,
+          0.66851806640625
+        ],
+        "rms": [
+          0.03544508765824808,
+          0.03731695243973014
+        ],
+        "dc": [
+          -1.5162019697261944e-05,
+          -1.5148000361287634e-05
+        ],
+        "non_silent_fraction": [
+          0.9724580663399924,
+          0.9736748492272899
+        ],
+        "clipped_samples": [
+          0,
+          0
+        ],
+        "nonfinite_samples": 0
+      },
+      "sha256": "dd95c0d588d47a034d2f9e6338b3399d7d5099ce9de0fe61414bd5957d72b388",
+      "failures": [],
+      "passed": true
+    },
+    {
+      "name": "slider-06-low",
+      "sliders": [
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "switches": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "seed": 302,
+      "no_samples": false,
+      "seconds": 16,
+      "exit_code": 0,
+      "audio": {
+        "file": "slider-06-low.wav",
+        "channels": 2,
+        "sample_rate": 44100,
+        "encoding": "pcm",
+        "bits": 16,
+        "frames": 848960,
+        "duration_seconds": 19.25079365079365,
+        "peak": [
+          0.386505126953125,
+          0.398345947265625
+        ],
+        "rms": [
+          0.027924853761682796,
+          0.029909963683033253
+        ],
+        "dc": [
+          -1.5140559329116654e-05,
+          -1.5151882638942059e-05
+        ],
+        "non_silent_fraction": [
+          0.9716582642291746,
+          0.9729468997361478
+        ],
+        "clipped_samples": [
+          0,
+          0
+        ],
+        "nonfinite_samples": 0
+      },
+      "sha256": "c858e64a9c134a5f893d994ce32095ffa5dc2319eb6e34c267c4296ccc90b1d3",
+      "failures": [],
+      "passed": true
+    },
+    {
+      "name": "slider-06-high",
+      "sliders": [
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        1,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "switches": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "seed": 302,
+      "no_samples": false,
+      "seconds": 16,
+      "exit_code": 0,
+      "audio": {
+        "file": "slider-06-high.wav",
+        "channels": 2,
+        "sample_rate": 44100,
+        "encoding": "pcm",
+        "bits": 16,
+        "frames": 848960,
+        "duration_seconds": 19.25079365079365,
+        "peak": [
+          0.433502197265625,
+          0.4200439453125
+        ],
+        "rms": [
+          0.03263695146720674,
+          0.030055081585186234
+        ],
+        "dc": [
+          -1.5131752310363563e-05,
+          -1.5132579091715893e-05
+        ],
+        "non_silent_fraction": [
+          0.9784854410101772,
+          0.9834326705616283
+        ],
+        "clipped_samples": [
+          0,
+          0
+        ],
+        "nonfinite_samples": 0
+      },
+      "sha256": "5bd9efc2e3e7d10d2a2a6b333ddf60c144898493d6d022b5840446d38160dac8",
+      "failures": [],
+      "passed": true
+    },
+    {
+      "name": "slider-07-low",
+      "sliders": [
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0,
+        0.5,
+        0.5
+      ],
+      "switches": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "seed": 302,
+      "no_samples": false,
+      "seconds": 16,
+      "exit_code": 0,
+      "audio": {
+        "file": "slider-07-low.wav",
+        "channels": 2,
+        "sample_rate": 44100,
+        "encoding": "pcm",
+        "bits": 16,
+        "frames": 848960,
+        "duration_seconds": 19.25079365079365,
+        "peak": [
+          0.425506591796875,
+          0.425689697265625
+        ],
+        "rms": [
+          0.0359320369834707,
+          0.03763468671542386
+        ],
+        "dc": [
+          -1.515209832103397e-05,
+          -1.5142572361974503e-05
+        ],
+        "non_silent_fraction": [
+          0.9774759705993216,
+          0.9776161421032793
+        ],
+        "clipped_samples": [
+          0,
+          0
+        ],
+        "nonfinite_samples": 0
+      },
+      "sha256": "38c63886e8a6aeee89aebd7ceb201b208345f10dfbe9b9e9419ae08a793854ca",
+      "failures": [],
+      "passed": true
+    },
+    {
+      "name": "slider-07-high",
+      "sliders": [
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        1,
+        0.5,
+        0.5
+      ],
+      "switches": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "seed": 302,
+      "no_samples": false,
+      "seconds": 16,
+      "exit_code": 0,
+      "audio": {
+        "file": "slider-07-high.wav",
+        "channels": 2,
+        "sample_rate": 44100,
+        "encoding": "pcm",
+        "bits": 16,
+        "frames": 848960,
+        "duration_seconds": 19.25079365079365,
+        "peak": [
+          0.243743896484375,
+          0.253173828125
+        ],
+        "rms": [
+          0.023374571540367164,
+          0.024162432153662962
+        ],
+        "dc": [
+          -1.5133190190976313e-05,
+          -1.5154542718075646e-05
+        ],
+        "non_silent_fraction": [
+          0.9773193083301922,
+          0.9797705427817565
+        ],
+        "clipped_samples": [
+          0,
+          0
+        ],
+        "nonfinite_samples": 0
+      },
+      "sha256": "86646275ae2573c8d85b4a37f6b8daa0ff47d7a9e9881b70e633663a0795fb09",
+      "failures": [],
+      "passed": true
+    },
+    {
+      "name": "slider-08-low",
+      "sliders": [
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0,
+        0.5
+      ],
+      "switches": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "seed": 302,
+      "no_samples": false,
+      "seconds": 16,
+      "exit_code": 0,
+      "audio": {
+        "file": "slider-08-low.wav",
+        "channels": 2,
+        "sample_rate": 44100,
+        "encoding": "pcm",
+        "bits": 16,
+        "frames": 848960,
+        "duration_seconds": 19.25079365079365,
+        "peak": [
+          0.2984619140625,
+          0.319671630859375
+        ],
+        "rms": [
+          0.029742612359369005,
+          0.031211137112628372
+        ],
+        "dc": [
+          -1.5155189764351383e-05,
+          -1.5147317367996579e-05
+        ],
+        "non_silent_fraction": [
+          0.9668099792687523,
+          0.9665072559366754
+        ],
+        "clipped_samples": [
+          0,
+          0
+        ],
+        "nonfinite_samples": 0
+      },
+      "sha256": "774fa0a96a0e5422e4b2e8ee30044216f410e10a8a344e8dd033226db6393625",
+      "failures": [],
+      "passed": true
+    },
+    {
+      "name": "slider-08-high",
+      "sliders": [
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        1,
+        0.5
+      ],
+      "switches": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "seed": 302,
+      "no_samples": false,
+      "seconds": 16,
+      "exit_code": 0,
+      "audio": {
+        "file": "slider-08-high.wav",
+        "channels": 2,
+        "sample_rate": 44100,
+        "encoding": "pcm",
+        "bits": 16,
+        "frames": 848960,
+        "duration_seconds": 19.25079365079365,
+        "peak": [
+          0.275848388671875,
+          0.261566162109375
+        ],
+        "rms": [
+          0.024193242785710355,
+          0.02463225537414964
+        ],
+        "dc": [
+          -1.515673548601009e-05,
+          -1.5165075193564037e-05
+        ],
+        "non_silent_fraction": [
+          0.9654318224651338,
+          0.9627826988315115
+        ],
+        "clipped_samples": [
+          0,
+          0
+        ],
+        "nonfinite_samples": 0
+      },
+      "sha256": "42023d679c209448f00513ba25ab6fa3c7c591a165fc59f68d3203e067ab0771",
+      "failures": [],
+      "passed": true
+    },
+    {
+      "name": "slider-09-low",
+      "sliders": [
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0
+      ],
+      "switches": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "seed": 302,
+      "no_samples": false,
+      "seconds": 16,
+      "exit_code": 0,
+      "audio": {
+        "file": "slider-09-low.wav",
+        "channels": 2,
+        "sample_rate": 44100,
+        "encoding": "pcm",
+        "bits": 16,
+        "frames": 848960,
+        "duration_seconds": 19.25079365079365,
+        "peak": [
+          0.27984619140625,
+          0.267578125
+        ],
+        "rms": [
+          0.03162537161174108,
+          0.03213327342021668
+        ],
+        "dc": [
+          -1.513753977982988e-05,
+          -1.51323993566393e-05
+        ],
+        "non_silent_fraction": [
+          0.970877308707124,
+          0.9708572842065586
+        ],
+        "clipped_samples": [
+          0,
+          0
+        ],
+        "nonfinite_samples": 0
+      },
+      "sha256": "cdadbfb6dc53e72be54e45d97939cf82ed01703586c656f04db6b7149ab85502",
+      "failures": [],
+      "passed": true
+    },
+    {
+      "name": "slider-09-high",
+      "sliders": [
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        1
+      ],
+      "switches": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "seed": 302,
+      "no_samples": false,
+      "seconds": 16,
+      "exit_code": 0,
+      "audio": {
+        "file": "slider-09-high.wav",
+        "channels": 2,
+        "sample_rate": 44100,
+        "encoding": "pcm",
+        "bits": 16,
+        "frames": 848960,
+        "duration_seconds": 19.25079365079365,
+        "peak": [
+          0.2510986328125,
+          0.334930419921875
+        ],
+        "rms": [
+          0.031930749284285034,
+          0.033505034106980275
+        ],
+        "dc": [
+          -1.5143363196311517e-05,
+          -1.5151163698635684e-05
+        ],
+        "non_silent_fraction": [
+          0.9796975122502827,
+          0.9813901715039578
+        ],
+        "clipped_samples": [
+          0,
+          0
+        ],
+        "nonfinite_samples": 0
+      },
+      "sha256": "f26cfd11ffa9278a3804216657dc491cc45db26b3dff53872307f1d6eac10e83",
+      "failures": [],
+      "passed": true
+    },
+    {
+      "name": "switch-00-on",
+      "sliders": [
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "switches": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "seed": 302,
+      "no_samples": false,
+      "seconds": 16,
+      "exit_code": 0,
+      "audio": {
+        "file": "switch-00-on.wav",
+        "channels": 2,
+        "sample_rate": 44100,
+        "encoding": "pcm",
+        "bits": 16,
+        "frames": 848960,
+        "duration_seconds": 19.25079365079365,
+        "peak": [
+          0.696014404296875,
+          0.71258544921875
+        ],
+        "rms": [
+          0.07549814451467793,
+          0.07582094759308827
+        ],
+        "dc": [
+          -1.5156376015856901e-05,
+          -1.5142895885112372e-05
+        ],
+        "non_silent_fraction": [
+          0.9794183471541651,
+          0.9797658311345646
+        ],
+        "clipped_samples": [
+          0,
+          0
+        ],
+        "nonfinite_samples": 0
+      },
+      "sha256": "0198cc2fcc4a6689f7c41dbff9d43199a46e2525d15882dcdfc1f1693f6fa370",
+      "failures": [],
+      "passed": true
+    },
+    {
+      "name": "switch-01-on",
+      "sliders": [
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "switches": [
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "seed": 302,
+      "no_samples": false,
+      "seconds": 16,
+      "exit_code": 0,
+      "audio": {
+        "file": "switch-01-on.wav",
+        "channels": 2,
+        "sample_rate": 44100,
+        "encoding": "pcm",
+        "bits": 16,
+        "frames": 848960,
+        "duration_seconds": 19.25079365079365,
+        "peak": [
+          0.57208251953125,
+          0.611663818359375
+        ],
+        "rms": [
+          0.040622437221886736,
+          0.03930952641708498
+        ],
+        "dc": [
+          -1.5160761551725788e-05,
+          -1.5144297818709804e-05
+        ],
+        "non_silent_fraction": [
+          0.9673942235205428,
+          0.9637509423294384
+        ],
+        "clipped_samples": [
+          0,
+          0
+        ],
+        "nonfinite_samples": 0
+      },
+      "sha256": "889d6d8c623081b8d468b4ca73dba90f00ea2a5d2dd5567f7ac7df15a72fbaa6",
+      "failures": [],
+      "passed": true
+    },
+    {
+      "name": "switch-02-on",
+      "sliders": [
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "switches": [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "seed": 302,
+      "no_samples": false,
+      "seconds": 16,
+      "exit_code": 0,
+      "audio": {
+        "file": "switch-02-on.wav",
+        "channels": 2,
+        "sample_rate": 44100,
+        "encoding": "pcm",
+        "bits": 16,
+        "frames": 848960,
+        "duration_seconds": 19.25079365079365,
+        "peak": [
+          0.577789306640625,
+          0.58404541015625
+        ],
+        "rms": [
+          0.05162978633600876,
+          0.04918380986867994
+        ],
+        "dc": [
+          -1.515069638743654e-05,
+          -1.5149941500114846e-05
+        ],
+        "non_silent_fraction": [
+          0.974303854127403,
+          0.9749140124387485
+        ],
+        "clipped_samples": [
+          0,
+          0
+        ],
+        "nonfinite_samples": 0
+      },
+      "sha256": "d8897fbe35b17f07e5919adcc248900d19a19b7594fbb6413cdc8e00dce898b9",
+      "failures": [],
+      "passed": true
+    },
+    {
+      "name": "switch-03-on",
+      "sliders": [
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "switches": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "seed": 302,
+      "no_samples": false,
+      "seconds": 16,
+      "exit_code": 0,
+      "audio": {
+        "file": "switch-03-on.wav",
+        "channels": 2,
+        "sample_rate": 44100,
+        "encoding": "pcm",
+        "bits": 16,
+        "frames": 848960,
+        "duration_seconds": 19.25079365079365,
+        "peak": [
+          0.289825439453125,
+          0.302154541015625
+        ],
+        "rms": [
+          0.02309057168430235,
+          0.02162394085066774
+        ],
+        "dc": [
+          -1.5162882425629593e-05,
+          -1.5163313789813419e-05
+        ],
+        "non_silent_fraction": [
+          0.9567741707500942,
+          0.9567965510742555
+        ],
+        "clipped_samples": [
+          0,
+          0
+        ],
+        "nonfinite_samples": 0
+      },
+      "sha256": "9f355bfe47b8687b6f8f12b2e1d26c4ce9b138d0fb903645335c234e3a4a933e",
+      "failures": [],
+      "passed": true
+    },
+    {
+      "name": "switch-04-on",
+      "sliders": [
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "switches": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "seed": 302,
+      "no_samples": false,
+      "seconds": 16,
+      "exit_code": 0,
+      "audio": {
+        "file": "switch-04-on.wav",
+        "channels": 2,
+        "sample_rate": 44100,
+        "encoding": "pcm",
+        "bits": 16,
+        "frames": 848960,
+        "duration_seconds": 19.25079365079365,
+        "peak": [
+          0.68310546875,
+          0.658477783203125
+        ],
+        "rms": [
+          0.047601168208994474,
+          0.04656445573461059
+        ],
+        "dc": [
+          -1.5178339642216654e-05,
+          -1.5142212891821317e-05
+        ],
+        "non_silent_fraction": [
+          0.9527633810780248,
+          0.9536691952506596
+        ],
+        "clipped_samples": [
+          0,
+          0
+        ],
+        "nonfinite_samples": 0
+      },
+      "sha256": "664a45de49baf23d5716789982922dc2a7a2bb3cead8cb56c1b2838534e687b8",
+      "failures": [],
+      "passed": true
+    },
+    {
+      "name": "switch-05-on",
+      "sliders": [
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "switches": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "seed": 302,
+      "no_samples": false,
+      "seconds": 16,
+      "exit_code": 0,
+      "audio": {
+        "file": "switch-05-on.wav",
+        "channels": 2,
+        "sample_rate": 44100,
+        "encoding": "pcm",
+        "bits": 16,
+        "frames": 848960,
+        "duration_seconds": 19.25079365079365,
+        "peak": [
+          0.605804443359375,
+          0.628509521484375
+        ],
+        "rms": [
+          0.044435719642330104,
+          0.04260761462984418
+        ],
+        "dc": [
+          -1.5148827142639966e-05,
+          -1.5158640677821982e-05
+        ],
+        "non_silent_fraction": [
+          0.9731141632114587,
+          0.9763545985676593
+        ],
+        "clipped_samples": [
+          0,
+          0
+        ],
+        "nonfinite_samples": 0
+      },
+      "sha256": "7b00af9f48da6020330802b9eeeb488118a3f238217647c7eaffc0ac14857ac1",
+      "failures": [],
+      "passed": true
+    },
+    {
+      "name": "switch-06-on",
+      "sliders": [
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "switches": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "seed": 302,
+      "no_samples": false,
+      "seconds": 16,
+      "exit_code": 0,
+      "audio": {
+        "file": "switch-06-on.wav",
+        "channels": 2,
+        "sample_rate": 44100,
+        "encoding": "pcm",
+        "bits": 16,
+        "frames": 848960,
+        "duration_seconds": 19.25079365079365,
+        "peak": [
+          0.631805419921875,
+          0.634796142578125
+        ],
+        "rms": [
+          0.04528693433762253,
+          0.04312090864605634
+        ],
+        "dc": [
+          -1.5151451274758233e-05,
+          -1.5149474188915703e-05
+        ],
+        "non_silent_fraction": [
+          0.9720587542404825,
+          0.9707406709385601
+        ],
+        "clipped_samples": [
+          0,
+          0
+        ],
+        "nonfinite_samples": 0
+      },
+      "sha256": "30e00836b95867e98a0fa1ff12c9d941f851e2be0beede2424f88a3894b4892e",
+      "failures": [],
+      "passed": true
+    },
+    {
+      "name": "switch-07-on",
+      "sliders": [
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "switches": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "seed": 302,
+      "no_samples": false,
+      "seconds": 16,
+      "exit_code": 0,
+      "audio": {
+        "file": "switch-07-on.wav",
+        "channels": 2,
+        "sample_rate": 44100,
+        "encoding": "pcm",
+        "bits": 16,
+        "frames": 848960,
+        "duration_seconds": 19.25079365079365,
+        "peak": [
+          0.598846435546875,
+          0.628692626953125
+        ],
+        "rms": [
+          0.04461366379794686,
+          0.0440894949095495
+        ],
+        "dc": [
+          -1.5143291302280878e-05,
+          -1.5136317581309043e-05
+        ],
+        "non_silent_fraction": [
+          0.9738091311722579,
+          0.9740788729739918
+        ],
+        "clipped_samples": [
+          0,
+          0
+        ],
+        "nonfinite_samples": 0
+      },
+      "sha256": "c130f6edf6d803d58fa58c2981e6b5a5b62ef798fa9386326fc035e90d3d2319",
+      "failures": [],
+      "passed": true
+    },
+    {
+      "name": "switch-08-on",
+      "sliders": [
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "switches": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "seed": 302,
+      "no_samples": false,
+      "seconds": 16,
+      "exit_code": 0,
+      "audio": {
+        "file": "switch-08-on.wav",
+        "channels": 2,
+        "sample_rate": 44100,
+        "encoding": "pcm",
+        "bits": 16,
+        "frames": 848960,
+        "duration_seconds": 19.25079365079365,
+        "peak": [
+          0.69061279296875,
+          0.710723876953125
+        ],
+        "rms": [
+          0.0497821316649172,
+          0.049245465457380004
+        ],
+        "dc": [
+          -1.5157454426316464e-05,
+          -1.5136461369370318e-05
+        ],
+        "non_silent_fraction": [
+          0.9708867320015078,
+          0.9738432906143988
+        ],
+        "clipped_samples": [
+          0,
+          0
+        ],
+        "nonfinite_samples": 0
+      },
+      "sha256": "699e5d4a9045c4c0f80693d974fce66a344dc51abd5651e0bf304711a2554f2a",
+      "failures": [],
+      "passed": true
+    },
+    {
+      "name": "switch-09-on",
+      "sliders": [
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "switches": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "seed": 302,
+      "no_samples": false,
+      "seconds": 16,
+      "exit_code": 0,
+      "audio": {
+        "file": "switch-09-on.wav",
+        "channels": 2,
+        "sample_rate": 44100,
+        "encoding": "pcm",
+        "bits": 16,
+        "frames": 848960,
+        "duration_seconds": 19.25079365079365,
+        "peak": [
+          0.6787109375,
+          0.677734375
+        ],
+        "rms": [
+          0.04832967280545044,
+          0.04711055015648133
+        ],
+        "dc": [
+          -1.5147568997103809e-05,
+          -1.5128912496153382e-05
+        ],
+        "non_silent_fraction": [
+          0.9746595834903883,
+          0.9710163022992838
+        ],
+        "clipped_samples": [
+          0,
+          0
+        ],
+        "nonfinite_samples": 0
+      },
+      "sha256": "33aa642d6ed6f639dd8f0887e8726716441e23adac613e39edad1e6137a5afd8",
+      "failures": [],
+      "passed": true
+    },
+    {
+      "name": "repeat-identical-seed",
+      "sliders": [
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "switches": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "seed": 302,
+      "no_samples": false,
+      "seconds": 16,
+      "exit_code": 0,
+      "audio": {
+        "file": "repeat-identical-seed.wav",
+        "channels": 2,
+        "sample_rate": 44100,
+        "encoding": "pcm",
+        "bits": 16,
+        "frames": 848960,
+        "duration_seconds": 19.25079365079365,
+        "peak": [
+          0.666839599609375,
+          0.652008056640625
+        ],
+        "rms": [
+          0.04583916241102462,
+          0.04422298792872428
+        ],
+        "dc": [
+          -1.5137072468630737e-05,
+          -1.5132255568578024e-05
+        ],
+        "non_silent_fraction": [
+          0.9737514134941575,
+          0.9746230682246514
+        ],
+        "clipped_samples": [
+          0,
+          0
+        ],
+        "nonfinite_samples": 0
+      },
+      "sha256": "3845124e2521b9c61f79de1910446a9f17bec3e95b43de798267aadf48e6698f",
+      "failures": [],
+      "passed": true
+    },
+    {
+      "name": "synthesis-only-no-samples",
+      "sliders": [
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "switches": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "seed": 302,
+      "no_samples": true,
+      "seconds": 16,
+      "exit_code": 0,
+      "audio": {
+        "file": "synthesis-only-no-samples.wav",
+        "channels": 2,
+        "sample_rate": 44100,
+        "encoding": "pcm",
+        "bits": 16,
+        "frames": 848960,
+        "duration_seconds": 19.25079365079365,
+        "peak": [
+          0.3927001953125,
+          0.40423583984375
+        ],
+        "rms": [
+          0.02787467476895351,
+          0.029982595503445852
+        ],
+        "dc": [
+          -1.5156555750933495e-05,
+          -1.5150660440421221e-05
+        ],
+        "non_silent_fraction": [
+          0.9711305597436863,
+          0.9726206181681115
+        ],
+        "clipped_samples": [
+          0,
+          0
+        ],
+        "nonfinite_samples": 0
+      },
+      "sha256": "459d33ea8039ff0fe87a6ad45f2327912d6c17788fb0aeeeabd5c241cd4d513a",
+      "failures": [],
+      "passed": true
+    }
+  ]
+}

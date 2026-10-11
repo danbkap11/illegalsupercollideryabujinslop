@@ -1,0 +1,11 @@
+* text=auto
+*.scd text eol=lf
+*.sh text eol=lf
+*.py text eol=lf
+*.md text eol=lf
+*.json text eol=lf
+*.ism text eol=lf
+*.wav -text
+*.png -text
+# Preserve upstream license notices verbatim, including their original CRLF.
+assets/optional/KENNEY_*_LICENSE.txt -text whitespace=-trailing-space,cr-at-eol

@@ -1,0 +1,8 @@
+renders/
+local/
+*.log
+*.osc
+*.scsyndef
+__pycache__/
+.DS_Store
+assets/optional/*.zip

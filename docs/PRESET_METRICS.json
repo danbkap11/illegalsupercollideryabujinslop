@@ -1,0 +1,133 @@
+{
+  "passed": true,
+  "files": [
+    {
+      "file": "renders/default.wav",
+      "channels": 2,
+      "sample_rate": 44100,
+      "encoding": "pcm",
+      "bits": 16,
+      "frames": 4112384,
+      "duration_seconds": 93.25133786848073,
+      "peak": [
+        0.73077392578125,
+        0.748992919921875
+      ],
+      "rms": [
+        0.05228892254413047,
+        0.05115925997414344
+      ],
+      "dc": [
+        -1.523421847250357e-05,
+        -1.523635569084213e-05
+      ],
+      "non_silent_fraction": [
+        0.9934045556057022,
+        0.9936010353118775
+      ],
+      "clipped_samples": [
+        0,
+        0
+      ],
+      "nonfinite_samples": 0,
+      "failures": [],
+      "passed": true
+    },
+    {
+      "file": "renders/vacant.wav",
+      "channels": 2,
+      "sample_rate": 44100,
+      "encoding": "pcm",
+      "bits": 16,
+      "frames": 4112384,
+      "duration_seconds": 93.25133786848073,
+      "peak": [
+        0.38861083984375,
+        0.404144287109375
+      ],
+      "rms": [
+        0.05239810795248792,
+        0.05277677501530095
+      ],
+      "dc": [
+        -1.5230804859879482e-05,
+        -1.5241758103864602e-05
+      ],
+      "non_silent_fraction": [
+        0.9976568336030877,
+        0.9975454626805279
+      ],
+      "clipped_samples": [
+        0,
+        0
+      ],
+      "nonfinite_samples": 0,
+      "failures": [],
+      "passed": true
+    },
+    {
+      "file": "renders/phone.wav",
+      "channels": 2,
+      "sample_rate": 44100,
+      "encoding": "pcm",
+      "bits": 16,
+      "frames": 4112384,
+      "duration_seconds": 93.25133786848073,
+      "peak": [
+        0.625762939453125,
+        0.642608642578125
+      ],
+      "rms": [
+        0.03967666118729074,
+        0.040239459373563845
+      ],
+      "dc": [
+        -1.5236147905725881e-05,
+        -1.523556165486218e-05
+      ],
+      "non_silent_fraction": [
+        0.9929274600815488,
+        0.9934655907619522
+      ],
+      "clipped_samples": [
+        0,
+        0
+      ],
+      "nonfinite_samples": 0,
+      "failures": [],
+      "passed": true
+    },
+    {
+      "file": "renders/fracture.wav",
+      "channels": 2,
+      "sample_rate": 44100,
+      "encoding": "pcm",
+      "bits": 16,
+      "frames": 4112384,
+      "duration_seconds": 93.25133786848073,
+      "peak": [
+        0.490478515625,
+        0.447113037109375
+      ],
+      "rms": [
+        0.030724955314620245,
+        0.030475825870589703
+      ],
+      "dc": [
+        -1.5228712166922975e-05,
+        -1.5230634179248278e-05
+      ],
+      "non_silent_fraction": [
+        0.9970362689865537,
+        0.9970158428784861
+      ],
+      "clipped_samples": [
+        0,
+        0
+      ],
+      "nonfinite_samples": 0,
+      "failures": [],
+      "passed": true
+    }
+  ]
+}
