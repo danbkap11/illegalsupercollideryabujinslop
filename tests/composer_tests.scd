@@ -23,7 +23,7 @@ bounds = [
     [\width, 0, 1], [\phone, 0, 1]
 ];
 voices = [\ismKick, \ismSnare, \ismHat, \ismBass, \ismBell, \ismPad,
-    \ismGhost, \ismPhrase, \ismNoise, \ismSampleMono, \ismSampleStereo];
+    \ismGhost, \ismNoise, \ismSampleMono, \ismSampleStereo];
 baseSliders = [0.58, 0.43, 0.54, 0.64, 0.45, 0.58, 0.54, 0.35, 0.28, 0.5];
 baseSwitches = [0, 1, 0, 0, 0, 0, 0, 0, 1, 0];
 validateMap = { |params, context|
@@ -52,11 +52,6 @@ validateTrace = { |trace, seconds, context|
         check.value(finite.value(dur) and: { dur > 0 and: { dur <= 16 } }, context ++ " finite lifetime " ++ index);
         check.value(voices.includes(event[\voice]), context ++ " supported voice " ++ index);
         check.value(event[\seed].isInteger, context ++ " server noise seed " ++ index);
-        if(event[\sampleIndex].notNil, {
-            check.value(event[\sampleIndex].isInteger and: {
-                event[\sampleIndex] >= 0
-            }, context ++ " valid sample index " ++ index);
-        });
         check.value(args.isArray and: { args.size.even }, context ++ " OSC argument pairs " ++ index);
         args.pairsDo { |key, value|
             check.value(key.isKindOf(Symbol) and: { finite.value(value) }, context ++ " finite OSC argument " ++ key);

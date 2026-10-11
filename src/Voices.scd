@@ -147,27 +147,6 @@ wear/echo residue repeatable too. No Quarks or extension UGens are required.
             Out.ar(out, Pan2.ar(HPF.ar(sig, 160) * env * amp.clip(0, 1), pan.clip(-1, 1)));
         }),
 
-        // Full forward sentences. Phrase routing bypasses the shared music crusher.
-        SynthDef(\ismPhrase, { |out=0, freq=440, amp=0.075, pan=0, dur=3,
-            seed=1, drive=1.1, tone=0.6, reverse=0, bend=0, buf=0, rate=1,
-            cutoff=5500, filterCoeff=0.4, echoMix=0.14, gate=1|
-            var d, lifetime, release, raw, energy, coefficient, ceiling, filtered, echo, sig;
-            RandSeed.ir(1, seed);
-            d = dur.clip(0.15,12);
-            lifetime = EnvGen.kr(Env.linen(0.006,(d-0.086).max(0.02),0.08),doneAction:2);
-            release = EnvGen.kr(Env.asr(0.006,1,0.065),gate,doneAction:2);
-            raw = PlayBuf.ar(1,buf,rate.clip(0.85,1.08)*BufRateScale.kr(buf),1,0,0);
-            energy = (Amplitude.kr(raw,0.012,0.085)*3).clip(0,1);
-            coefficient = Lag.kr(filterCoeff.clip(0,1),0.08);
-            ceiling = Lag.kr(cutoff.clip(1100,9000),0.07);
-            filtered = RLPF.ar(HPF.ar(raw,110),
-                (ceiling*(1-(0.65*coefficient*(1-energy)))).clip(700,10000),0.7);
-            filtered = (filtered*drive.clip(1,1.8)).tanh/drive.clip(1,1.8);
-            echo = DelayC.ar(filtered,0.45,0.215) * Lag.kr(echoMix.clip(0,0.35),0.08);
-            sig = LeakDC.ar(filtered+echo);
-            Out.ar(out,Pan2.ar(sig,pan.clip(-0.8,0.8))*amp.clip(0,0.18)*lifetime*release);
-        }),
-
         SynthDef(\ismNoise, { |out=0, freq=1800, amp=0.055, pan=0, dur=0.22,
             seed=1, drive=1.2, tone=0.5, reverse=0, bend=0|
             var d, f, attack, env, air, sparks, hum, sig;

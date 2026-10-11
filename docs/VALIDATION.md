@@ -4,29 +4,23 @@ Validated on Debian 13 x86_64 with SuperCollider language/server 3.13.0 and stoc
 
 | Check | Result |
 |---|---|
-| Composer/macro tests | Passed: 585,400 assertions, including every switch mask at three slider extrema, deterministic traces and memory continuation |
-| Native GUI integration | Passed: 115 functional assertions plus 106 screen-fit assertions; exact 10 sliders/10 switches, every callback, presets, reseeding, legend, ASCII labels, curved control hit areas, captions and repeated close/reopen |
-| Vocal scheduling and metadata | Passed: 2,398 assertions; forward full phrases, conservative lifetimes, no background ghost events, persistent cooldown, onset deadline projection and phrase-bank isolation |
-| Vocal DSP | Passed: five isolated NRT renders of all eight source buffers; reproducible audio, cutoff changes, coefficient-only modulation at a fixed base cutoff |
+| Composer/macro tests | Passed: 582,842 assertions, including every switch mask at three slider extrema, deterministic traces and memory continuation |
+| Native GUI integration | Passed: 75 assertions; exact 10 sliders/10 switches, every callback, presets, reseeding, legend, ASCII labels, repeated close/reopen |
 | Actual control audio comparisons | Passed: 33 NRT renders; all 20 controls measurably change the stereo signal; same-seed repeat byte-identical |
 | Synthesized fallback | Passed: complete non-silent stereo export without optional samples |
 | Full preset exports | Passed: four 90-second arrangements plus 3.25-second tails; finite samples, correct stereo/rate/duration, bounded peaks, negligible DC |
 | Demo excerpts | Passed: three 30-second stereo PCM16 files, checked independently |
 | Asset integrity | Passed: all 28 bundled CC0 WAVs, headers and SHA256 checksums; missing-file restoration tested from all three packs |
 | Audio analyzer tests | Passed: five tests, including nonfinite, silent, truncated and malformed output rejection |
-| Realtime audio/lifecycle | Passed: 31 assertions with actual 48 kHz stereo recording through dummy JACK; phrases despite rapid macro edits, vocal toggle/fade, cooldown, reseed responsiveness, playback/restart and owned-node cleanup |
+| Realtime audio/lifecycle | Passed: 15 assertions with actual 48 kHz stereo recording through dummy JACK; playback, immediate control revision, panic/restart, stop/restart, and owned-node cleanup |
 
-The final all-on realtime check measured about **3.47% peak server CPU** on this cloud host at 48 kHz/1024 frames. This is a measurement of this host and dummy backend, not a performance promise for other computers. A fresh `/status.reply` showed zero owned synthesizers after closing the window. Actual spoken onsets after toggling and rapid edits remained 8.26 seconds apart; disabling ZHŪN released the actual phrase node and cleared its caption. Reseeding during playback now immediately revises the scheduled scene. Recorded panic output was silent after settling; restarted playback was non-silent.
+The final all-on realtime check measured about **0.92% peak server CPU** on this cloud host at 48 kHz/1024 frames. This is a measurement of this host and dummy backend, not a performance promise for other computers. A fresh `/status.reply` showed zero owned synthesizers after closing the window. Recorded panic output was exactly silent after settling; restarted playback was non-silent.
 
 The ten-minute event stress trace contains thousands of events and hundreds of variable-length scenes. Tested stress cases remained well below the enforced 48-voice/96-events-per-second limits. Same-seed rendering includes explicit per-voice and FX noise seeds; byte reproducibility is verified on this toolchain and bank.
 
-Detailed audio comparison results are in [CONTROL_VALIDATION.json](CONTROL_VALIDATION.json) and [VOCAL_VALIDATION.json](VOCAL_VALIDATION.json). Full preset and excerpt measurements are in [PRESET_METRICS.json](PRESET_METRICS.json) and [DEMO_METRICS.json](DEMO_METRICS.json). These reports correspond to the packaged code and asset mappings. Full WAVs are generated into ignored `renders/`; checked-in excerpts are in `demos/`.
+Detailed audio comparison results are in [CONTROL_VALIDATION.json](CONTROL_VALIDATION.json). Full preset and excerpt measurements are in [PRESET_METRICS.json](PRESET_METRICS.json) and [DEMO_METRICS.json](DEMO_METRICS.json). These reports correspond to the packaged code and asset mappings. Full WAVs are generated into ignored `renders/`; checked-in excerpts are in `demos/`.
 
 Integration testing found and corrected equal-time dependent group ordering, concurrent temporary OSC score collisions, incomplete master restart after panic, quiet output calibration, and one CLI-only Document-class fallback issue. The affected tests were rerun after corrections. Required checks above have no unresolved failures.
-
-The vocal update also exposed and corrected projected scene cooldowns being advanced by interruptions, delayed reseed response, and actual onset deadlines after vocal toggles. Phrase lifetimes use full-buffer duration and a short echo tail; the shared drum crusher cannot obscure the speech bus. Generation and verification of the eight original phrase samples are deterministic and documented in `docs/VOCALS.md`.
-
-Adaptive GUI geometry was checked at 1280×720 and 800×600 through Xvfb, and at smaller offscreen geometry. On 1280×720 the main panel becomes 1042×660; on 800×600 it becomes 760×481. The native widgets, fonts, handles and artwork scale together, and all transport buttons and the scrollable legend remain inside available bounds. The packaged screenshot shows the fitted 720-pixel-height layout.
 
 ## Limits
 

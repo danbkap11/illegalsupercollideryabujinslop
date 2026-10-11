@@ -1,12 +1,11 @@
 /* Deterministic scene composer. No server, GUI, clock or global random state. */
 (
 ~ism[\map] = { |sliders, switches|
-    var x, z, p, tempo, damage, wear, phone, vocalFilterCoeff;
+    var x, z, p, tempo, damage, wear, phone;
     x = Array.fill(10, { |i| ((sliders.at(i) ? 0.5).asFloat).clip(0, 1) });
     z = Array.fill(10, { |i| ((switches.at(i) ? 0).asInteger).clip(0, 1) });
     tempo = (110 + (70 * x[2])).clip(110, 180);
     damage = x[1]; wear = x[7]; phone = z[3];
-    vocalFilterCoeff = (x[6] * (1 - (0.32 * wear)) * (1 - (0.18 * phone))).clip(0, 1);
     p = (
         bpm: tempo,
         bits: (16 - (11 * damage)).clip(5, 16),
@@ -39,14 +38,12 @@
         kickDrive: (1 + (2.3 * x[5]) + (0.6 * z[0])).clip(1, 4),
         kickAccent: (0.22 + (0.13 * x[5])).clip(0.22, 0.35),
         bassTone: (0.20 + (0.62 * x[5]) - (0.16 * wear)).clip(0, 1),
-        vocalGap: (8 + (40 * (1 - x[6]).pow(1.6))).clip(8, 48),
-        vocalFilterCoeff: vocalFilterCoeff,
-        vocalCutoff: (1100 + (7900 * vocalFilterCoeff)).clip(1100, 9000),
-        vocalRate: (0.85 + (0.23 * x[6])).clip(0.85, 1.08),
-        vocalAmp: (0.06 + (0.04 * x[6])).clip(0.06, 0.10),
-        vocalDelayMix: (0.02 + (0.27 * x[4]) + (0.06 * z[7])).clip(0, 0.35),
-        voiceBend: (0.15 + (1.25 * x[6]) + (0.45 * z[6])),
+        ghostChance: ((0.10 + (0.72 * x[6])) * z[1]).clip(0, 0.9),
+        ghostAmp: ((0.030 + (0.075 * x[6])) * z[1]).clip(0, 0.105),
+        grainDuration: (0.42 - (0.31 * x[6])).clip(0.11, 0.42),
+        voiceBend: (0.15 + (2.85 * x[6]) + (2.0 * z[6])),
         sampleBlend: (0.12 + (0.63 * x[6]) + (0.20 * phone)).clip(0, 0.95),
+        ghostTone: (0.82 - (0.36 * x[6]) - (0.26 * phone)).clip(0, 1),
         noiseChance: (0.05 + (0.42 * wear)).clip(0.05, 0.47),
         noiseAmp: (0.008 + (0.031 * wear)).clip(0.008, 0.039),
         sourceTone: (0.95 - (0.65 * wear) - (0.20 * phone)).clip(0, 1),
@@ -68,7 +65,7 @@
     p
 };
 
-~ism[\compose] = { |seed = 302, sliders, switches, seconds = 60, memory, singleScene = false, vocalFloor = 0|
+~ism[\compose] = { |seed = 302, sliders, switches, seconds = 60, memory, singleScene = false|
     var p, x, z, rng, rand, coin, pick, weighted, add, events, scenes;
     var names, transitions, motifs, melodyTimes, melodyDurations, grooves;
     var rememberedMotif, rememberedGroove, motifIndex, grooveIndex, rootMidi;
@@ -76,7 +73,6 @@
     var sceneBeats, sceneDuration, sceneEnd, stepCount, sceneEnergy, melodyWeight;
     var shape, groove, tape, tapeStart, sparseHole, holeStart, holeEnd, lastMotif;
     var eventIndex, ordered, bounded, active, recentTimes, accepted, composedScenes;
-    var vocalNext, vocalInitialRemaining, phraseLastIndex, vocalWasEnabled, phraseDuration;
 
     p = ~ism[\map].value(sliders, switches); x = p[\sliders]; z = p[\switches];
     length = seconds.asFloat.clip(0.1, 36000); beat = 60 / p[\bpm];
@@ -156,27 +152,6 @@
         sceneNumber = (memory[\sceneNumber] ? 0).asInteger;
         lastMotif = (memory[\lastMotif] ? -1).asInteger;
     });
-    // This is a wall-time countdown, not a per-scene Bernoulli trial. Short
-    // scenes and live macro edits must not multiply vocal appearances. Runtime
-    // reconciles this projected countdown with time actually played when a
-    // revision interrupts a scene; the pure composer retains it in memory.
-    phraseDuration = 6.0; // Conservative placeholder; Samples resolves the clip's actual lifetime.
-    phraseLastIndex = if(memory.isNil, { -1 }, {
-        (memory[\phraseLastIndex] ? -1).asInteger.clip(-1, 7)
-    });
-    vocalWasEnabled = if(memory.isNil, { 0 }, {
-        (memory[\vocalWasEnabled] ? 0).asInteger.clip(0, 1)
-    });
-    vocalNext = if(memory.isNil or: { memory[\vocalRemaining].isNil }, {
-        3 + (5 * rand.value)
-    }, { memory[\vocalRemaining].asFloat.clip(0, 60) });
-    if((z[1] == 1) and: { vocalWasEnabled == 0 }, {
-        vocalNext = vocalNext.max(3 + (5 * rand.value));
-    });
-    // Runtime can supply its actual most-recent vocal deadline after a manual
-    // reseed or toggle; ordinary offline composition leaves this at zero.
-    vocalNext = vocalNext.max(vocalFloor.asFloat.clip(0,60));
-    vocalInitialRemaining = vocalNext;
     at = 0.0; composedScenes = 0;
     while { (at < length) and: { singleScene.not or: { composedScenes < 1 } } } {
         weights = if(previous < 0, { [1.2, 2.2, 0.6, 0.7, 0.5, 0.25, 1.1] }, { transitions[previous].copy });
@@ -291,7 +266,7 @@
                     dur = melodyDurations[i] * beat * p[\noteGate];
                     reversed = if((z[2] == 1) and: { (i == 0) or: { i == 6 } }, { 1 }, { 0 });
                     localBend = (rand.value - 0.5) * p[\wowCents] / 100;
-                    // ÆZRI still affects bell articulation when phrases are off.
+                    // ÆZRI still affects bell articulation when ghosts are off.
                     localBend = localBend + ((rand.value - 0.5) * p[\voiceBend] * 0.24);
                     if(tape and: { b >= tapeStart }, {
                         localBend = localBend - 7; dur = dur * 1.45;
@@ -337,32 +312,20 @@
             };
         });
         if(z[1] == 1, {
-            // Complete foreground sentences replace the old per-scene ghost
-            // loop. Phrases remain forwards and are never ratcheted/reversed;
-            // their rate, spectral decay and echo are the expressive controls.
-            while { vocalNext < sceneEnd } {
-                var phraseIndex, nextGap, eventSeed;
-                if(singleScene or: { (vocalNext + phraseDuration) <= length }, {
-                    phraseIndex = pick.value((0..7).reject { |index| index == phraseLastIndex });
-                    nextGap = (p[\vocalGap] * (0.94 + (0.12 * rand.value))).clip(8, 52);
-                    eventSeed = (rand.value * 2147483645).floor.asInteger + 1;
-                    events.add((time: vocalNext.asFloat, voice: \ismPhrase,
-                        dur: phraseDuration, phraseIndex: phraseIndex,
-                        nextVocalGap: nextGap, seed: eventSeed, order: eventIndex,
-                        args: [\freq, 300, \amp, p[\vocalAmp],
-                            \pan, (rand.value - 0.5) * p[\panSpread],
-                            \drive, 1 + (0.12 * x[1]), \tone, p[\sourceTone],
-                            \reverse, 0, \bend, 0, \cutoff, p[\vocalCutoff],
-                            \filterCoeff, p[\vocalFilterCoeff],
-                            \rate, p[\vocalRate], \echoMix, p[\vocalDelayMix]]));
-                    eventIndex = eventIndex + 1; phraseLastIndex = phraseIndex;
-                    vocalNext = vocalNext + nextGap;
-                }, {
-                    // An offline request ends with room for the full sentence.
-                    // Keep it due for a continuation, rather than clipping it.
-                    vocalNext = length;
-                });
-            };
+            // Guaranteed one answer per scene at full ÆZRI; probability at
+            // quieter settings makes the voice a recurring apparition.
+            if((sceneIndex == 3) or: { coin.value(p[\ghostChance]) }, {
+                var time, freq;
+                time = at + (beat * (0.75 + (0.4 * rand.value)));
+                freq = (rootMidi + 24 + pick.value([0, 7, 10])).midicps;
+                add.value(time, \ismGhost, p[\grainDuration] * (2 + (2 * x[6])),
+                    freq, p[\ghostAmp], p[\panSpread].neg, 1 + (0.35 * x[1]),
+                    p[\ghostTone], if(z[2] == 1, { 1 }, { 0 }),
+                    (rand.value - 0.5) * 2 * p[\voiceBend]);
+                add.value(time + (beat * (1.5 + x[4])), \ismGhost,
+                    p[\grainDuration] * 1.2, freq * 1.5, p[\ghostAmp] * 0.42,
+                    p[\panSpread], 1, p[\ghostTone], 0, p[\voiceBend].neg * 0.25);
+            });
         });
         if(z[3] == 1, {
             // Cheap two-note phone notification, distinct from the motif.
@@ -423,11 +386,9 @@
     };
     (events: bounded.asArray, scenes: scenes.asArray, bpm: p[\bpm],
         duration: if(singleScene, { at }, { length }),
-        vocalInitialRemaining: vocalInitialRemaining,
         memory: (rng: rng, rememberedMotif: rememberedMotif, rememberedGroove: rememberedGroove,
             motifIndex: motifIndex, grooveIndex: grooveIndex, rootMidi: rootMidi,
             previous: previous, recent: recent.asArray.copy, sceneNumber: sceneNumber,
-            lastMotif: lastMotif, vocalRemaining: (vocalNext - at).max(0),
-            phraseLastIndex: phraseLastIndex, vocalWasEnabled: z[1]))
+            lastMotif: lastMotif))
 };
 )

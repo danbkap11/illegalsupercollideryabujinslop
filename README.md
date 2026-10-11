@@ -1,10 +1,8 @@
 # ILLEGAL SUPERCOLLIDER YABUJINSLOP MACHINE
 
-A haunted generative beat instrument for SuperCollider. Ten mysterious sliders and ten switches jointly bend drums, original melodies, occasional spoken messages, musical memory, crushing, tape damage, and echo. Scenes recur and mutate inside an abstract chrome/opal Y2K interface.
+A haunted generative beat instrument for SuperCollider. Ten mysterious sliders and ten switches jointly bend drums, original melodies, ghost voices, musical memory, crushing, tape damage, and echo. Scenes recur and mutate instead of following a fixed song-section ladder.
 
 ![The machine](docs/interface.png)
-
-The chrome capsules, orbital switches and opal artwork scale together to fit your screen, including smaller laptop displays.
 
 ## Run it
 
@@ -19,14 +17,6 @@ Start at a comfortable output volume. The default patch is balanced; `PHONE RAVE
 
 The visible words are original Azeroy-inspired invented labels, not authenticated Azeroyska translations. The project creates original music inspired by the requested atmosphere; it includes no Yabujin song samples. The animated line is control-state artwork.
 
-## Spoken messages
-
-**ZHŪN** enables eight complete spoken phrases, such as “The angels are offline” and “Do you remember this place?” **ÆZRI** adjusts how often they arrive: roughly every 48 seconds at the low end, every 8 seconds at the high end, with seeded timing variation. It also changes playback rate and the coefficient that determines the vocal filter cutoff. **SHØR** darkens speech, **NØZA** adds telephone coloration, and **THÆL** adds short echoes.
-
-Phrases appear as isolated messages with gaps between them. The scheduler preserves cooldowns across scene changes and control edits; disabling ZHŪN fades the active message. Cutoff changes also affect phrases already playing. Words play forward with enough time to finish, and captions appear while a message is active. Preset files still use the same ten slider and ten switch values.
-
-The original synthetic phrase bank is bundled, so playback needs no speech engine or extra installation. See [phrase transcripts, generation and controls](docs/VOCALS.md).
-
 ## Audio setup
 
 macOS/Windows: select your working audio device in SuperCollider before evaluating Main. For example, evaluate `Server.default.options.device = "your device name";` before starting if you need a specific device. The machine uses stereo output and no audio inputs.
@@ -37,11 +27,9 @@ Closing the window frees the instrument's own nodes, buffers, buses and schedule
 
 ## Sounds
 
-The synthetic foundation includes kick, snare/clap, metallic hats, bass, breathy bell/flute, pads and noise. **28 downloaded Kenney CC0 sounds** add metal/glass/concrete impacts, phone-like tones, glitches, scratches and sweeps. **Eight original synthetic sentences** provide the spoken messages. Both banks are bundled: first launch needs no downloads.
+The synthetic foundation includes kick, snare/clap, metallic hats, bass, breathy bell/flute, pads, formants and noise. **28 downloaded Kenney CC0 sounds** add metal/glass/concrete impacts, phone-like tones, glitches, scratches and sweeps. The complete bank is bundled: first launch needs no downloads.
 
 [Asset provenance and checksums](assets/LICENSES.json) and original notices document each source. To verify the bank, run `python3 tools/fetch_assets.py --verify-only`; `python3 tools/fetch_assets.py` restores missing assets from the pinned official packs. FFmpeg is needed only for restoration, not playback. Removing the optional WAV bank leaves the synth engine operational.
-
-`python3 tools/generate_vocals.py --verify` checks the original speech bank. Optional regeneration uses eSpeak NG and FFmpeg; these tools are unnecessary for ordinary playback. Missing vocal files suppress speech and leave the instrumental engine available.
 
 ## Offline command line
 
@@ -68,7 +56,6 @@ The helper uses signed Debian packages and installs locally; it is not a desktop
 ## Development and checks
 
 - [Control mappings](docs/CONTROL_MAP.md)
-- [Vocal phrases](docs/VOCALS.md)
 - [Architecture](docs/ARCHITECTURE.md)
 - [Validation evidence and limits](docs/VALIDATION.md)
 - [Reference research](docs/REFERENCE_NOTES.md)
@@ -76,14 +63,12 @@ The helper uses signed Debian packages and installs locally; it is not a desktop
 
 ```bash
 QT_QPA_PLATFORM=offscreen sclang -D "$PWD/tests/composer_tests.scd"
-QT_QPA_PLATFORM=offscreen sclang -D "$PWD/tests/vocal_tests.scd"
 ISM_NO_BOOT=1 sclang -D "$PWD/tests/gui_tests.scd"   # requires desktop display/Xvfb
 python3 -m unittest discover -s tests -p 'test_*.py'
 python3 tools/analyze_audio.py renders/phone-rave.wav --expected-seconds 93.25
 python3 tests/audio_controls.py --sclang /path/to/sclang
-python3 tests/vocal_audio.py --sclang /path/to/sclang
 ```
 
 Realtime tests require a working backend; `tests/realtime_tests.scd` exercises actual playback, panic/restart, memory continuation and cleanup. The checked-in demo WAVs are short excerpts. Automated audio measurements establish finite output and behavior changes; they do not substitute for a listener's aesthetic judgment.
 
-Code, original procedural artwork, and the original synthetic phrase bank: MIT. Bundled Kenney sounds: CC0; see their included notices.
+Code and original procedural artwork: MIT. Bundled Kenney sounds: CC0; see their included notices.

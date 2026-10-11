@@ -18,19 +18,6 @@
     };
     if(app[\fx].notNil and: { app[\ready] == true }) { app[\fx].set(*args.asArray) };
     if(app[\master].notNil and: { app[\ready] == true }) { app[\master].set(\gain, settings[\gain]) };
-    app[\activePhrases] = (app[\activePhrases] ? []).select { |entry| entry[\end] > Main.elapsedTime };
-    if(app[\ready] == true) {
-        if(app[\switches][1] == 0) {
-            app[\activePhrases].do { |entry| entry[\node].set(\gate,0) };
-            app[\activePhrases] = [];
-            app[\vocalText] = "";
-        } {
-            app[\activePhrases].do { |entry|
-                entry[\node].set(\cutoff,settings[\vocalCutoff],\filterCoeff,settings[\vocalFilterCoeff],
-                    \echoMix,settings[\vocalDelayMix]);
-            };
-        };
-    };
     app[\notify].value;
 };
 ~ism[\setSlider] = { |index, value|
@@ -59,7 +46,7 @@
     ~ism[\seed] = ((~ism[\seed] * 16807) % 2147483647).abs.max(1);
     ~ism[\memory] = nil;
     ~ism[\status] = "NEW MEMORY " ++ ~ism[\seed];
-    ~ism[\updateParams].value;
+    ~ism[\notify].value;
 };
 // Numeric-only text format avoids evaluating executable preset files.
 ~ism[\savePreset] = { |path|
@@ -107,8 +94,6 @@
     if(app[\routine].notNil) { app[\routine].stop; app[\routine] = nil };
     if(app[\clock].notNil) { app[\clock].clear; app[\clock].stop; app[\clock] = nil };
     if(app[\sources].notNil and: { app[\ready] == true }) { app[\sources].freeAll };
-    app[\activePhrases] = [];
-    app[\vocalText] = "";
     app[\status] = "STOPPED / TAIL REMAINS";
     app[\notify].value;
 };
@@ -120,35 +105,19 @@
 };
 ~ism[\playEvent] = { |event|
     var app = ~ism;
-    var args, buffer, now = Main.elapsedTime, node, started = false;
-    if(app[\running] and: { app[\ready] == true } and: {
-        (event[\voice] != \ismPhrase) or: {
-            (app[\switches][1] == 1) and: { now >= (app[\vocalEarliestAt] ? 0) }
-        }
-    }) {
-        args = [\out, if(event[\voice] == \ismPhrase) { app[\fxBus].index } { app[\sourceBus].index },
-            \dur, event[\dur], \seed, event[\seed]] ++ event[\args];
+    var args, buffer, now = Main.elapsedTime;
+    if(app[\running] and: { app[\ready] == true }) {
+        args = [\out, app[\sourceBus].index, \dur, event[\dur], \seed, event[\seed]] ++ event[\args];
         if(event[\sampleIndex].notNil) {
             buffer = app[\buffers][event[\sampleIndex]];
             if(buffer.notNil) { args = args ++ [\buf, buffer.bufnum] };
         };
         app[\activeVoiceEnds] = (app[\activeVoiceEnds] ? []).select { |time| time > now };
         if(app[\activeVoiceEnds].size < 48) {
-            node = Synth(event[\voice], args, app[\sources]);
-            started = true;
+            Synth(event[\voice], args, app[\sources]);
             app[\activeVoiceEnds] = app[\activeVoiceEnds].add(now + event[\dur].max(0.035));
-            if(event[\voice] == \ismPhrase) {
-                app[\vocalEarliestAt] = now + 8;
-                app[\activePhrases] = (app[\activePhrases] ? []).add((node:node,end:now+event[\dur]));
-                app[\vocalText] = ["The angels are offline.","Keep the line open.","Do you remember this place?",
-                    "There is nobody at the other end.","You left your voice here.","The room has no floor.",
-                    "I can hear the forest.","Return to the empty city."][event[\phraseIndex] % 8];
-                app[\vocalUntil] = now + event[\dur];
-                app[\notify].value;
-            };
         };
     };
-    started;
 };
 ~ism[\start] = {
     var app = ~ism;
@@ -167,12 +136,9 @@
                 while { app[\running] } {
                     var seconds = 20;
                     var composition = app[\compose].value((app[\seed] + (batch * 7919)).abs.max(1),
-                        app[\sliders].copy, app[\switches].copy, seconds, app[\memory], true,
-                        ((app[\vocalEarliestAt] ? 0) - Main.elapsedTime + 0.025).max(0));
+                        app[\sliders].copy, app[\switches].copy, seconds, app[\memory], true);
                     var cursor = 0.0, index = 0, revision = app[\revision], remainder;
-                    var lastPhrase = if(app[\memory].isNil) { -1 } { app[\memory][\phraseLastIndex] ? -1 };
-                    var vocalDue = composition[\vocalInitialRemaining], sceneMemory = composition[\memory];
-                    app[\memory] = sceneMemory;
+                    app[\memory] = composition[\memory];
                     seconds = composition[\duration];
                     composition = app[\prepareEvents].value(composition, app[\sliders], app[\switches]);
                     app[\scene] = composition[\scenes][0][\name];
@@ -186,25 +152,13 @@
                             var step = remainder.min(0.12);
                             step.wait; cursor = cursor + step; remainder = remainder - step;
                         };
-                        if(revision == app[\revision]) {
-                            if(app[\playEvent].value(event) and: { event[\voice] == \ismPhrase }) {
-                                vocalDue = cursor + event[\nextVocalGap];
-                                lastPhrase = event[\phraseIndex];
-                            };
-                        };
+                        if(revision == app[\revision]) { app[\playEvent].value(event) };
                         index = index + 1;
                     };
                     remainder = (seconds - cursor).max(0);
                     while { (remainder > 0) and: { app[\running] } and: { revision == app[\revision] } } {
                         var step = remainder.min(0.12);
-                        step.wait; cursor = cursor + step; remainder = remainder - step;
-                    };
-                    // A reseed/preset can deliberately discard memory while this
-                    // scene is waiting. Do not resurrect its old phrase cooldown.
-                    if(app[\memory] === sceneMemory) {
-                        sceneMemory[\vocalRemaining] = (vocalDue - cursor).max(0);
-                        sceneMemory[\phraseLastIndex] = lastPhrase;
-                        sceneMemory[\vocalWasEnabled] = app[\switches][1];
+                        step.wait; remainder = remainder - step;
                     };
                     batch = batch + 1;
                 };
