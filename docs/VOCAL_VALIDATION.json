@@ -1,0 +1,580 @@
+{
+  "passed": true,
+  "method": "All eight checked-in phrase buffers rendered separately through stock ismPhrase DSP and limiter; finite stereo signals, manifest hashes, numeric signal differences and deterministic replay verified. Transcript text is provenance metadata; speech recognition and subjective listening are not claimed.",
+  "sources": [
+    {
+      "file": "00_angels_offline.wav",
+      "transcript": "The angels are offline.",
+      "duration_seconds": 2.0254421768707482,
+      "failures": []
+    },
+    {
+      "file": "01_line_open.wav",
+      "transcript": "Keep the line open.",
+      "duration_seconds": 2.036734693877551,
+      "failures": []
+    },
+    {
+      "file": "02_remember_this_place.wav",
+      "transcript": "Do you remember this place?",
+      "duration_seconds": 2.2829705215419502,
+      "failures": []
+    },
+    {
+      "file": "03_other_end.wav",
+      "transcript": "There is nobody at the other end.",
+      "duration_seconds": 2.341065759637188,
+      "failures": []
+    },
+    {
+      "file": "04_voice_here.wav",
+      "transcript": "You left your voice here.",
+      "duration_seconds": 2.3839909297052153,
+      "failures": []
+    },
+    {
+      "file": "05_no_floor.wav",
+      "transcript": "The room has no floor.",
+      "duration_seconds": 2.3834467120181406,
+      "failures": []
+    },
+    {
+      "file": "06_hear_the_forest.wav",
+      "transcript": "I can hear the forest.",
+      "duration_seconds": 2.1997732426303855,
+      "failures": []
+    },
+    {
+      "file": "07_empty_city.wav",
+      "transcript": "Return to the empty city.",
+      "duration_seconds": 2.3818367346938776,
+      "failures": []
+    }
+  ],
+  "renders": [
+    {
+      "name": "closed-filter",
+      "filter_coefficient": 0,
+      "cutoff": 1100,
+      "failures": [],
+      "audio": {
+        "file": "closed-filter.wav",
+        "channels": 2,
+        "sample_rate": 44100,
+        "encoding": "pcm",
+        "bits": 16,
+        "frames": 1466368,
+        "duration_seconds": 33.25097505668934,
+        "peak": [
+          0.145538330078125,
+          0.184722900390625
+        ],
+        "rms": [
+          0.015231277157531075,
+          0.019332986262148518
+        ],
+        "dc": [
+          -8.035180621972964e-06,
+          -8.049228504383364e-06
+        ],
+        "non_silent_fraction": [
+          0.48765998712465086,
+          0.4896622130324721
+        ],
+        "clipped_samples": [
+          0,
+          0
+        ],
+        "nonfinite_samples": 0
+      },
+      "phrases": [
+        {
+          "index": 0,
+          "rms": [
+            0.024172628786687956,
+            0.030682209850580264
+          ],
+          "first_difference_rms": 0.0029944104051297707
+        },
+        {
+          "index": 1,
+          "rms": [
+            0.015590612424735887,
+            0.019789021601761488
+          ],
+          "first_difference_rms": 0.0020294883104810773
+        },
+        {
+          "index": 2,
+          "rms": [
+            0.021744488697501962,
+            0.027600227322305004
+          ],
+          "first_difference_rms": 0.0018115944672481604
+        },
+        {
+          "index": 3,
+          "rms": [
+            0.016120436817142873,
+            0.020461626095123753
+          ],
+          "first_difference_rms": 0.0018584486284177293
+        },
+        {
+          "index": 4,
+          "rms": [
+            0.017451801692942668,
+            0.022151452535451713
+          ],
+          "first_difference_rms": 0.0018923676767665409
+        },
+        {
+          "index": 5,
+          "rms": [
+            0.015985706897171416,
+            0.02029056469294587
+          ],
+          "first_difference_rms": 0.0017978843217870218
+        },
+        {
+          "index": 6,
+          "rms": [
+            0.02242062688076389,
+            0.02845840867066135
+          ],
+          "first_difference_rms": 0.0023368130246592977
+        },
+        {
+          "index": 7,
+          "rms": [
+            0.015460972402970306,
+            0.019624511175793877
+          ],
+          "first_difference_rms": 0.0014629029233254357
+        }
+      ],
+      "sha256": "97db9ba6ed1880e10f140bbadc64877188012c7b310e7f4f3ccab479e3c7ee59",
+      "passed": true
+    },
+    {
+      "name": "open-filter",
+      "filter_coefficient": 1,
+      "cutoff": 9000,
+      "failures": [],
+      "audio": {
+        "file": "open-filter.wav",
+        "channels": 2,
+        "sample_rate": 44100,
+        "encoding": "pcm",
+        "bits": 16,
+        "frames": 1466368,
+        "duration_seconds": 33.25097505668934,
+        "peak": [
+          0.149993896484375,
+          0.190399169921875
+        ],
+        "rms": [
+          0.014029308759204185,
+          0.017807319357111374
+        ],
+        "dc": [
+          -7.988749769146881e-06,
+          -8.008375181166154e-06
+        ],
+        "non_silent_fraction": [
+          0.4882416964909218,
+          0.4898606625349162
+        ],
+        "clipped_samples": [
+          0,
+          0
+        ],
+        "nonfinite_samples": 0
+      },
+      "phrases": [
+        {
+          "index": 0,
+          "rms": [
+            0.020869179932986696,
+            0.026489099813985766
+          ],
+          "first_difference_rms": 0.004311825064653586
+        },
+        {
+          "index": 1,
+          "rms": [
+            0.01398333141906271,
+            0.01774896666895444
+          ],
+          "first_difference_rms": 0.002778014567156139
+        },
+        {
+          "index": 2,
+          "rms": [
+            0.02243158721682878,
+            0.02847232468973407
+          ],
+          "first_difference_rms": 0.005858951088830695
+        },
+        {
+          "index": 3,
+          "rms": [
+            0.014423683332458465,
+            0.01830793231451122
+          ],
+          "first_difference_rms": 0.002437169230668313
+        },
+        {
+          "index": 4,
+          "rms": [
+            0.015546595733502063,
+            0.019733221382994992
+          ],
+          "first_difference_rms": 0.0032847987039164683
+        },
+        {
+          "index": 5,
+          "rms": [
+            0.014520356144129408,
+            0.018430603961775347
+          ],
+          "first_difference_rms": 0.0023376473674018715
+        },
+        {
+          "index": 6,
+          "rms": [
+            0.019866092660247917,
+            0.025215903653734634
+          ],
+          "first_difference_rms": 0.003515168091407066
+        },
+        {
+          "index": 7,
+          "rms": [
+            0.015189261362359154,
+            0.019279568736886524
+          ],
+          "first_difference_rms": 0.0029654316699415538
+        }
+      ],
+      "sha256": "9c3bd187c05e99450a67062b7ce930cddd384b63d9b74a1d2973c6877453539c",
+      "passed": true
+    },
+    {
+      "name": "repeat-open-filter",
+      "filter_coefficient": 1,
+      "cutoff": 9000,
+      "failures": [],
+      "audio": {
+        "file": "repeat-open-filter.wav",
+        "channels": 2,
+        "sample_rate": 44100,
+        "encoding": "pcm",
+        "bits": 16,
+        "frames": 1466368,
+        "duration_seconds": 33.25097505668934,
+        "peak": [
+          0.149993896484375,
+          0.190399169921875
+        ],
+        "rms": [
+          0.014029308759204185,
+          0.017807319357111374
+        ],
+        "dc": [
+          -7.988749769146881e-06,
+          -8.008375181166154e-06
+        ],
+        "non_silent_fraction": [
+          0.4882416964909218,
+          0.4898606625349162
+        ],
+        "clipped_samples": [
+          0,
+          0
+        ],
+        "nonfinite_samples": 0
+      },
+      "phrases": [
+        {
+          "index": 0,
+          "rms": [
+            0.020869179932986696,
+            0.026489099813985766
+          ],
+          "first_difference_rms": 0.004311825064653586
+        },
+        {
+          "index": 1,
+          "rms": [
+            0.01398333141906271,
+            0.01774896666895444
+          ],
+          "first_difference_rms": 0.002778014567156139
+        },
+        {
+          "index": 2,
+          "rms": [
+            0.02243158721682878,
+            0.02847232468973407
+          ],
+          "first_difference_rms": 0.005858951088830695
+        },
+        {
+          "index": 3,
+          "rms": [
+            0.014423683332458465,
+            0.01830793231451122
+          ],
+          "first_difference_rms": 0.002437169230668313
+        },
+        {
+          "index": 4,
+          "rms": [
+            0.015546595733502063,
+            0.019733221382994992
+          ],
+          "first_difference_rms": 0.0032847987039164683
+        },
+        {
+          "index": 5,
+          "rms": [
+            0.014520356144129408,
+            0.018430603961775347
+          ],
+          "first_difference_rms": 0.0023376473674018715
+        },
+        {
+          "index": 6,
+          "rms": [
+            0.019866092660247917,
+            0.025215903653734634
+          ],
+          "first_difference_rms": 0.003515168091407066
+        },
+        {
+          "index": 7,
+          "rms": [
+            0.015189261362359154,
+            0.019279568736886524
+          ],
+          "first_difference_rms": 0.0029654316699415538
+        }
+      ],
+      "sha256": "9c3bd187c05e99450a67062b7ce930cddd384b63d9b74a1d2973c6877453539c",
+      "passed": true
+    },
+    {
+      "name": "coefficient-zero",
+      "filter_coefficient": 0,
+      "cutoff": 5500,
+      "failures": [],
+      "audio": {
+        "file": "coefficient-zero.wav",
+        "channels": 2,
+        "sample_rate": 44100,
+        "encoding": "pcm",
+        "bits": 16,
+        "frames": 1466368,
+        "duration_seconds": 33.25097505668934,
+        "peak": [
+          0.16058349609375,
+          0.203826904296875
+        ],
+        "rms": [
+          0.01416467347165772,
+          0.01797914432713045
+        ],
+        "dc": [
+          -8.022589556997714e-06,
+          -8.040903833325348e-06
+        ],
+        "non_silent_fraction": [
+          0.48953877880586594,
+          0.49111068981319833
+        ],
+        "clipped_samples": [
+          0,
+          0
+        ],
+        "nonfinite_samples": 0
+      },
+      "phrases": [
+        {
+          "index": 0,
+          "rms": [
+            0.021073952876956337,
+            0.02674903901071257
+          ],
+          "first_difference_rms": 0.004586861328522923
+        },
+        {
+          "index": 1,
+          "rms": [
+            0.01408717042792134,
+            0.01788079251687068
+          ],
+          "first_difference_rms": 0.0028613846112623196
+        },
+        {
+          "index": 2,
+          "rms": [
+            0.02283389285361836,
+            0.028982997900594536
+          ],
+          "first_difference_rms": 0.00645346491092989
+        },
+        {
+          "index": 3,
+          "rms": [
+            0.014480669067062593,
+            0.01838017929245377
+          ],
+          "first_difference_rms": 0.00252152641638484
+        },
+        {
+          "index": 4,
+          "rms": [
+            0.015607732534388116,
+            0.019810791236029947
+          ],
+          "first_difference_rms": 0.0033896181351877296
+        },
+        {
+          "index": 5,
+          "rms": [
+            0.014599554597509166,
+            0.01853115452361183
+          ],
+          "first_difference_rms": 0.0024249605797121952
+        },
+        {
+          "index": 6,
+          "rms": [
+            0.020012966685756892,
+            0.02540233072545468
+          ],
+          "first_difference_rms": 0.0038372522878642877
+        },
+        {
+          "index": 7,
+          "rms": [
+            0.015371245942025191,
+            0.01951063825447403
+          ],
+          "first_difference_rms": 0.003381367378286187
+        }
+      ],
+      "sha256": "3ae049152205a97f764db2c3b9e078a94c8b801eae93ab0a63edf6e1b8feb8bc",
+      "passed": true
+    },
+    {
+      "name": "coefficient-one",
+      "filter_coefficient": 1,
+      "cutoff": 5500,
+      "failures": [],
+      "audio": {
+        "file": "coefficient-one.wav",
+        "channels": 2,
+        "sample_rate": 44100,
+        "encoding": "pcm",
+        "bits": 16,
+        "frames": 1466368,
+        "duration_seconds": 33.25097505668934,
+        "peak": [
+          0.1605224609375,
+          0.2037353515625
+        ],
+        "rms": [
+          0.014335090342400334,
+          0.01819546045753395
+        ],
+        "dc": [
+          -7.971538511734435e-06,
+          -7.991392852207801e-06
+        ],
+        "non_silent_fraction": [
+          0.4868716447712989,
+          0.4887231581703911
+        ],
+        "clipped_samples": [
+          0,
+          0
+        ],
+        "nonfinite_samples": 0
+      },
+      "phrases": [
+        {
+          "index": 0,
+          "rms": [
+            0.021315396288547405,
+            0.027055529531500193
+          ],
+          "first_difference_rms": 0.00449273045973479
+        },
+        {
+          "index": 1,
+          "rms": [
+            0.014460854435800455,
+            0.018355100078587167
+          ],
+          "first_difference_rms": 0.0030429744767796743
+        },
+        {
+          "index": 2,
+          "rms": [
+            0.02292662641249098,
+            0.029100641046903075
+          ],
+          "first_difference_rms": 0.006080215080450021
+        },
+        {
+          "index": 3,
+          "rms": [
+            0.014861539461356921,
+            0.01886366266567397
+          ],
+          "first_difference_rms": 0.0026599738528732693
+        },
+        {
+          "index": 4,
+          "rms": [
+            0.01576939770490999,
+            0.02001599451767738
+          ],
+          "first_difference_rms": 0.0032479276482709693
+        },
+        {
+          "index": 5,
+          "rms": [
+            0.014885274063625307,
+            0.01889385743952813
+          ],
+          "first_difference_rms": 0.0025272562183811698
+        },
+        {
+          "index": 6,
+          "rms": [
+            0.020146902537549305,
+            0.025572344755895433
+          ],
+          "first_difference_rms": 0.0035288783869127523
+        },
+        {
+          "index": 7,
+          "rms": [
+            0.015523342014565048,
+            0.019703733234344642
+          ],
+          "first_difference_rms": 0.002986268735014207
+        }
+      ],
+      "sha256": "77f2d1169c4112e1f42746654b012e5d9a46bd2cee1f4e183627129558cf1e33",
+      "passed": true
+    }
+  ],
+  "filter_signal_difference_rms": 0.012417295005623333,
+  "coefficient_only_signal_difference_rms": 0.003766412958555424,
+  "identical_settings_byte_identical": true,
+  "failures": []
+}

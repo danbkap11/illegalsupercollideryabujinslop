@@ -28,6 +28,13 @@ Routine({
         check.value(buttons.count { |view| view.states.size == 2 } == 10, "exactly ten two-state Button switches");
         check.value(buttons.every { |view| [1, 2].includes(view.states.size) }, "transports and auxiliary actions remain momentary");
         check.value(~ism[\sliderViews].size == 10 and: { ~ism[\switchViews].size == 10 }, "stored control arrays cover all widgets");
+        (~ism[\sliderViews] ++ ~ism[\switchViews]).do { |view, index|
+            var box = view.bounds, parent = view.parent.bounds;
+            check.value(box.width >= 12 and: { box.height >= 12 }, "control remains a usable hit target " ++ index);
+            check.value((box.left >= 0) and: { box.top >= 0 } and: {
+                box.right <= parent.width
+            } and: { box.bottom <= parent.height }, "control stays inside its parent " ++ index);
+        };
         ~ism[\sliderViews].do { |slider, index|
             var value = 0.07 + (0.08 * index);
             slider.valueAction = value;

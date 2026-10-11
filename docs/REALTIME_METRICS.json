@@ -1,0 +1,37 @@
+{
+  "passed": true,
+  "files": [
+    {
+      "file": "renders/realtime.wav",
+      "channels": 2,
+      "sample_rate": 48000,
+      "encoding": "float",
+      "bits": 32,
+      "frames": 1803264,
+      "duration_seconds": 37.568,
+      "peak": [
+        0.4689503312110901,
+        0.46487608551979065
+      ],
+      "rms": [
+        0.03692669297379725,
+        0.038059667600038656
+      ],
+      "dc": [
+        3.8415538324809894e-08,
+        -4.5346235614067275e-08
+      ],
+      "non_silent_fraction": [
+        0.9399544381743328,
+        0.9401041666666666
+      ],
+      "clipped_samples": [
+        0,
+        0
+      ],
+      "nonfinite_samples": 0,
+      "failures": [],
+      "passed": true
+    }
+  ]
+}

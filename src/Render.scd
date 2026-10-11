@@ -26,7 +26,8 @@
     messages.add([0.004, [\s_new, \ismFX, 20, 0, 11] ++ fxArgs]);
     messages.add([0.005, [\s_new, \ismMaster, 21, 0, 12, \in, 18, \out, 0, \gain, settings[\gain]]]);
     events.do { |event|
-        var args = [\out, 16, \seed, event[\seed], \dur, event[\dur]] ++ event[\args];
+        var args = [\out, if(event[\voice] == \ismPhrase) { 18 } { 16 },
+            \seed, event[\seed], \dur, event[\dur]] ++ event[\args];
         if(event[\sampleIndex].notNil) { args = args ++ [\buf, 100 + event[\sampleIndex]] };
         messages.add([event[\time] + 0.01, [\s_new, event[\voice], count, 0, 10] ++ args]);
         count = count + 1;
